@@ -1,11 +1,14 @@
 import React from 'react';
-import Layout from '../common/Layout';
+import Leagues from './Leagues';
 
 const Home = () => {
   return (
-    <Layout>
-      <p>Home</p>
-    </Layout>
+    <section id='leagues'>
+      <div className='container'>
+        <h2>Football Leagues</h2>
+        <Leagues />
+      </div>
+    </section>
   );
 };
 

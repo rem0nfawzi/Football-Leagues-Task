@@ -6,7 +6,11 @@ const Header = () => {
   return (
     <header>
       <div className='logo-wrap'>
-        <Link to='/'>Football Leagues</Link>
+        <div className='container'>
+          <Link to='/'>
+            <h1>Football Leagues</h1>
+          </Link>
+        </div>
       </div>
       <Navbar />
     </header>

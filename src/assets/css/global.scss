@@ -1,0 +1,72 @@
+// Global Styling
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+// Main Layout Styling
+.main-layout {
+    min-height: 100vh;
+    background-color: #ff0;
+    position: relative;
+}
+
+.container {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.logo-wrap {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #f7f7f7;
+
+    a h1 {
+        color: #f00;
+    }
+}
+
+#nav {
+    background-color: #eee;
+
+    ul {
+        display: flex;
+
+        li {
+            padding: 10px 20px;
+
+            &:first-of-type {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f00;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}

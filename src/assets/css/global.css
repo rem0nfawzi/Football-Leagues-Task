@@ -1,0 +1,66 @@
+/* line 2, global.scss */
+* {
+  box-sizing: border-box; }
+
+/* line 6, global.scss */
+body {
+  margin: 0; }
+
+/* line 10, global.scss */
+a {
+  text-decoration: none; }
+
+/* line 14, global.scss */
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none; }
+
+/* line 21, global.scss */
+p {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+/* line 27, global.scss */
+.main-layout {
+  min-height: 100vh;
+  background-color: #ff0;
+  position: relative; }
+
+/* line 33, global.scss */
+.container {
+  padding-left: 100px;
+  padding-right: 100px; }
+
+/* line 38, global.scss */
+.logo-wrap {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #f7f7f7; }
+  /* line 43, global.scss */
+  .logo-wrap a h1 {
+    color: #f00; }
+
+/* line 48, global.scss */
+#nav {
+  background-color: #eee; }
+  /* line 51, global.scss */
+  #nav ul {
+    display: flex; }
+    /* line 54, global.scss */
+    #nav ul li {
+      padding: 10px 20px; }
+      /* line 57, global.scss */
+      #nav ul li:first-of-type {
+        padding-left: 0; }
+
+/* line 64, global.scss */
+#footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f00;
+  padding-top: 30px;
+  padding-bottom: 30px; }

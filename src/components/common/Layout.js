@@ -1,14 +1,15 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import '../../assets/css/global.css';
 
 const Layout = ({ children }) => {
   return (
-    <Fragment>
+    <div className='main-layout'>
       <Header />
       {children}
       <Footer />
-    </Fragment>
+    </div>
   );
 };
 
