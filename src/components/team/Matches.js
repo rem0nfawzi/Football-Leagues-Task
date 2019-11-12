@@ -11,7 +11,7 @@ const Matches = ({ teamId }) => {
   useEffect(() => {
     // Get matches for each team and assign them to state
     axios
-      .get(`http://api.football-data.org/v2/teams/${teamId}/matches`, {
+      .get(`https://api.football-data.org/v2/teams/${teamId}/matches`, {
         headers: { 'X-Auth-Token': token }
       })
       .then(res => {

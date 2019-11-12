@@ -25,7 +25,7 @@ const Competition = ({
   useEffect(() => {
     // Getting competition info
     axios
-      .get(`http://api.football-data.org/v2/competitions/${id}`, {
+      .get(`https://api.football-data.org/v2/competitions/${id}`, {
         headers: { 'X-Auth-Token': token }
       })
       .then(res => {

@@ -5,7 +5,7 @@ import { token } from '../constants';
 export const getLeagues = () => async dispatch => {
   try {
     const res = await axios.get(
-      'http://api.football-data.org/v2/competitions',
+      'https://api.football-data.org/v2/competitions',
       { headers: { 'X-Auth-Token': token } }
     );
     dispatch({
@@ -23,7 +23,7 @@ export const getLeagues = () => async dispatch => {
 // Get league teams
 export const getTeams = LeagueId => async dispatch => {
   const res = await axios.get(
-    `http://api.football-data.org/v2/competitions/${LeagueId}/teams`,
+    `https://api.football-data.org/v2/competitions/${LeagueId}/teams`,
     { headers: { 'X-Auth-Token': token } }
   );
   if (res) {
