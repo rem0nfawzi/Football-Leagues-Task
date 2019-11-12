@@ -1,0 +1,70 @@
+/* line 4, Team.scss */
+.team-info {
+  background-color: #f7f7f7;
+  padding: 25px; }
+  /* line 8, Team.scss */
+  .team-info .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; }
+    /* line 13, Team.scss */
+    .team-info .title .logo {
+      width: 50px;
+      margin-right: 20px; }
+    /* line 18, Team.scss */
+    .team-info .title h3 {
+      margin-bottom: 0; }
+  /* line 23, Team.scss */
+  .team-info .contact {
+    display: flex;
+    flex-wrap: wrap; }
+    /* line 27, Team.scss */
+    .team-info .contact .wrapper {
+      flex-basis: 33.333%;
+      display: flex;
+      align-items: center;
+      padding: 15px; }
+      /* line 33, Team.scss */
+      .team-info .contact .wrapper.long {
+        flex-grow: 1; }
+      /* line 37, Team.scss */
+      .team-info .contact .wrapper img {
+        width: 30px;
+        margin-right: 10px; }
+      /* line 42, Team.scss */
+      .team-info .contact .wrapper p {
+        font-size: 12px; }
+
+/* line 49, Team.scss */
+.players {
+  background-color: #583bb6;
+  padding: 50px;
+  margin-top: 30px;
+  border-radius: 5px; }
+  /* line 55, Team.scss */
+  .players h3 {
+    color: #fff; }
+  /* line 59, Team.scss */
+  .players .players-wrap {
+    display: flex;
+    flex-wrap: wrap; }
+    /* line 63, Team.scss */
+    .players .players-wrap .player-wrap {
+      flex-basis: 33.333%;
+      padding: 10px; }
+    /* line 68, Team.scss */
+    .players .players-wrap .player {
+      padding: 20px;
+      background-color: #4528a4; }
+      /* line 72, Team.scss */
+      .players .players-wrap .player h4 {
+        margin-bottom: 5px;
+        color: #eee; }
+      /* line 77, Team.scss */
+      .players .players-wrap .player .details {
+        display: flex;
+        justify-content: space-between; }
+        /* line 81, Team.scss */
+        .players .players-wrap .player .details p {
+          color: #ccc;
+          font-size: 13px; }

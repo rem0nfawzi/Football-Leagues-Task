@@ -5,6 +5,7 @@ import Competition from './components/competition/Competition';
 import Layout from './components/common/Layout';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import TeamDetails from './components/team/TeamDetails';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/league/:id' component={Competition} />
+            <Route exact path='/team/:id' component={TeamDetails} />
           </Switch>
         </Layout>
       </BrowserRouter>

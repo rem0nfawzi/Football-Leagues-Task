@@ -122,7 +122,16 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #f00;
+    background-color: #1f1f1f;
     padding-top: 30px;
     padding-bottom: 30px;
+
+    p {
+        color: #fff;
+        text-align: center;
+        font-size: 13px;
+        text-transform: uppercase;
+        word-spacing: 3px;
+        letter-spacing: 1px;
+    }
 }
