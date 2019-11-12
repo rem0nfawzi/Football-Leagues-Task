@@ -5,7 +5,7 @@ import Teams from './Teams';
 import '../../assets/css/competition.css';
 import Loader from '../common/Loader';
 import ErrMsg from '../common/ErrMsg';
-import token from '../../store/constants';
+import { token } from '../../store/constants';
 
 const Competition = ({
   match: {

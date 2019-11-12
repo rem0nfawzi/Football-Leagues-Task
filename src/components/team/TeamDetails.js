@@ -11,7 +11,7 @@ import Squad from './Squad';
 import Matches from './Matches';
 import Loader from '../common/Loader';
 import ErrMsg from '../common/ErrMsg';
-import token from '../../store/constants';
+import { token } from '../../store/constants';
 
 const TeamDetails = ({
   match: {

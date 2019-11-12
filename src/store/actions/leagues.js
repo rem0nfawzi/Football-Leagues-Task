@@ -1,5 +1,6 @@
 import axios from 'axios';
-import token from '../constants';
+import { token } from '../constants';
+
 // Getting all leagues
 export const getLeagues = () => async dispatch => {
   try {

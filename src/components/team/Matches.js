@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Match from './Match';
 import Loader from '../common/Loader';
-import token from '../../store/constants';
+import { token } from '../../store/constants';
 
 const Matches = ({ teamId }) => {
   const [matches, setMatches] = useState([]);
