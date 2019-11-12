@@ -1,11 +1,11 @@
-import React, { useState, useEffect, Fragment } from 'react';
-import axios from 'axios';
-import { connect } from 'react-redux';
-import Teams from './Teams';
-import '../../assets/css/competition.css';
-import Loader from '../common/Loader';
-import ErrMsg from '../common/ErrMsg';
-import { token } from '../../store/constants';
+import React, { useState, useEffect, Fragment } from "react";
+import axios from "axios";
+import { connect } from "react-redux";
+import Teams from "./Teams";
+import "../../assets/css/competition.css";
+import Loader from "../common/Loader";
+import ErrMsg from "../common/ErrMsg";
+import { token } from "../../store/constants";
 
 const Competition = ({
   match: {
@@ -26,7 +26,7 @@ const Competition = ({
     // Getting competition info
     axios
       .get(`https://api.football-data.org/v2/competitions/${id}`, {
-        headers: { 'X-Auth-Token': token }
+        headers: { "X-Auth-Token": token }
       })
       .then(res => {
         setLoading(false);
@@ -48,9 +48,12 @@ const Competition = ({
             // if I'm not coming from Home so I need to load this competition's teams
             // Getting Teams
             axios
-              .get(`http://api.football-data.org/v2/competitions/${id}/teams`, {
-                headers: { 'X-Auth-Token': token }
-              })
+              .get(
+                `https://api.football-data.org/v2/competitions/${id}/teams`,
+                {
+                  headers: { "X-Auth-Token": token }
+                }
+              )
               .then(res => {
                 setTeams(res.data.teams);
               });
@@ -67,20 +70,18 @@ const Competition = ({
 
   return (
     <Fragment>
-      <section className='league-info'>
-        <div className='container'>
+      <section className="league-info">
+        <div className="container">
           <h2>football leagues</h2>
           <p>{competition.name && competition.name}</p>
-          <p>
-            {!loading && !available && (
-              <ErrMsg msg="Can't show information about this league now, Please try again later" />
-            )}
-          </p>
+          {!loading && !available && (
+            <ErrMsg msg="Can't show information about this league now, Please try again later" />
+          )}
 
           {!loading && available && (
-            <div className='info-box'>
+            <div className="info-box">
               <h3>{competition.name && competition.name}</h3>
-              <div className='details'>
+              <div className="details">
                 <p>
                   seasons: {competition.seasons && competition.seasons.length}
                 </p>
