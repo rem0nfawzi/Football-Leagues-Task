@@ -54,6 +54,7 @@ $purple: #583bb6;
 
     h3 {
         color: #fff;
+        padding: 10px;
     }
 
     .players-wrap {
@@ -81,6 +82,54 @@ $purple: #583bb6;
                 p {
                     color: #ccc;
                     font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+.matches-box {
+    background-color: $purple;
+    padding: 50px;
+    margin-top: 30px;
+    border-radius: 5px;
+
+    >h3 {
+        color: #fff;
+        padding: 10px;
+    }
+
+    .matches-wrap {
+
+        display: flex;
+        flex-wrap: wrap;
+
+        .match-wrap {
+            flex-basis: 50%;
+            padding: 10px;
+
+            .match {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                background-color: #4528a4;
+                height: 100%;
+
+                >div {
+                    flex-basis: 33.333%;
+                    text-align: center;
+
+                    h4 {
+                        color: #ccc;
+                        margin-bottom: 0;
+                    }
+
+                    .date {
+                        margin-top: 5px;
+                        color: #eee;
+                        font-size: 12px;
+                    }
                 }
             }
         }

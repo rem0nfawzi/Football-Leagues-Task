@@ -2,7 +2,6 @@ import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import Teams from './Teams';
-import defaultLogo from '../../assets/images/championship.svg';
 import '../../assets/css/competition.css';
 
 const Competition = ({
@@ -38,7 +37,7 @@ const Competition = ({
           if (leagues.length > 0) {
             for (let i = 0; i < leagues.length; i++) {
               if (leagues[i].id == id) {
-                setTeams(leagues[i].teams);
+                if (leagues[i].teams) setTeams(leagues[i].teams);
                 break;
               }
             }

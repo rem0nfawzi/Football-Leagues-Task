@@ -8,6 +8,7 @@ import email from '../../assets/images/email.svg';
 import defaultLogo from '../../assets/images/championship.svg';
 import '../../assets/css/team.css';
 import Squad from './Squad';
+import Matches from './Matches';
 
 const TeamDetails = ({
   match: {
@@ -69,6 +70,7 @@ const TeamDetails = ({
           </div>
         </div>
         <Squad squad={team.squad ? team.squad : null} />
+        <Matches teamId={team.id} />
       </div>
     </section>
   );
