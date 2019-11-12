@@ -2,7 +2,7 @@ import React, { useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { getLeagues } from '../../store/actions/leagues';
 import League from './League';
-
+import '../../assets/css/leagues.css';
 const Leagues = ({ leagues: { leagues, loading, err }, getLeagues }) => {
   // Getting all leagues
   useEffect(() => {
@@ -22,6 +22,7 @@ const Leagues = ({ leagues: { leagues, loading, err }, getLeagues }) => {
           id={league.id}
           name={league.name}
           currentSeason={league.currentSeason}
+          logo={league.emblemUrl ? league.emblemUrl : null}
           teams={league.count ? league.count : null}
         />
       ))}

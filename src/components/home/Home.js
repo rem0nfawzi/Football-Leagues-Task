@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <section id='leagues'>
       <div className='container'>
-        <h2>Football Leagues</h2>
+        <h2 className='main-title'>Football Leagues</h2>
         <Leagues />
       </div>
     </section>

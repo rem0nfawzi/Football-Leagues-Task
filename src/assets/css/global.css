@@ -1,61 +1,111 @@
-/* line 2, global.scss */
+@font-face {
+  src: url("../fonts/OpenSans-Regular.ttf");
+  font-family: opensans; }
+/* line 11, global.scss */
 * {
   box-sizing: border-box; }
 
-/* line 6, global.scss */
+/* line 15, global.scss */
 body {
   margin: 0; }
 
-/* line 10, global.scss */
+/* line 19, global.scss */
+p,
+a,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: opensans; }
+
+/* line 31, global.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+  word-spacing: 2px; }
+
+/* line 43, global.scss */
 a {
   text-decoration: none; }
 
-/* line 14, global.scss */
+/* line 47, global.scss */
 ul {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none; }
 
-/* line 21, global.scss */
+/* line 54, global.scss */
 p {
   margin-top: 0;
   margin-bottom: 0; }
 
-/* line 27, global.scss */
+/* line 59, global.scss */
+.main-title {
+  margin-bottom: 50px; }
+
+/* line 63, global.scss */
+section {
+  padding-top: 80px;
+  padding-bottom: 80px; }
+
+/* line 68, global.scss */
+.link {
+  padding: 10px 30px;
+  background-color: #583bb6;
+  outline: 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: bold; }
+
+/* line 80, global.scss */
 .main-layout {
   min-height: 100vh;
   position: relative;
   padding-bottom: 100px; }
 
-/* line 33, global.scss */
+/* line 86, global.scss */
 .container {
   padding-left: 100px;
   padding-right: 100px; }
 
-/* line 38, global.scss */
+/* line 91, global.scss */
 .logo-wrap {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  background-color: #f7f7f7; }
-  /* line 43, global.scss */
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #583bb6; }
+  /* line 96, global.scss */
   .logo-wrap a h1 {
-    color: #f00; }
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 0; }
 
-/* line 48, global.scss */
+/* line 104, global.scss */
 #nav {
   background-color: #eee; }
-  /* line 51, global.scss */
+  /* line 107, global.scss */
   #nav ul {
     display: flex; }
-    /* line 54, global.scss */
+    /* line 110, global.scss */
     #nav ul li {
       padding: 10px 20px; }
-      /* line 57, global.scss */
+      /* line 113, global.scss */
       #nav ul li:first-of-type {
         padding-left: 0; }
 
-/* line 64, global.scss */
+/* line 120, global.scss */
 #footer {
   position: absolute;
   bottom: 0;
