@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Match = ({ match }) => {
+  // Convert string to actual date to get day, month and year
   const matchDate = new Date(match.utcDate);
   return (
     <div className='match-wrap'>

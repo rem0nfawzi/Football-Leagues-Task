@@ -5,9 +5,8 @@ const Squad = ({ squad }) => {
     <div className='players'>
       <h3>Players</h3>
       <div className='players-wrap'>
-        {squad
-          ? squad.map(player => <Player player={player} key={player.id} />)
-          : 'noo'}
+        {squad &&
+          squad.map(player => <Player player={player} key={player.id} />)}
       </div>
     </div>
   );

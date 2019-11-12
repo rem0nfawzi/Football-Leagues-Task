@@ -11,6 +11,7 @@ import Squad from './Squad';
 import Matches from './Matches';
 import Loader from '../common/Loader';
 import ErrMsg from '../common/ErrMsg';
+import token from '../../store/constants';
 
 const TeamDetails = ({
   match: {
@@ -23,7 +24,7 @@ const TeamDetails = ({
     // Get team details and assign them to state
     axios
       .get(`https://api.football-data.org/v2/teams/${id}`, {
-        headers: { 'X-Auth-Token': '5b42f8f8f9f247439bda03879156cdcb' }
+        headers: { 'X-Auth-Token': token }
       })
       .then(res => {
         setTeam(res.data);

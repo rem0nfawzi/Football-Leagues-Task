@@ -11,6 +11,7 @@ const League = ({ id, name, currentSeason, teams, getTeams, logo }) => {
   useEffect(() => {
     getTeams(id);
   }, [getTeams, id]);
+
   return (
     <div className='league'>
       <div className='info'>

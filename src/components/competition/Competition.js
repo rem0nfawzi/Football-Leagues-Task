@@ -5,6 +5,7 @@ import Teams from './Teams';
 import '../../assets/css/competition.css';
 import Loader from '../common/Loader';
 import ErrMsg from '../common/ErrMsg';
+import token from '../../store/constants';
 
 const Competition = ({
   match: {
@@ -12,9 +13,9 @@ const Competition = ({
   },
   leagues: { leagues }
 }) => {
-  // declaring state
+  // Loading state
   const [loading, setLoading] = useState(true);
-  // checks if league info exists or not
+  // state to detect if league info exists or not
   const [available, setAvailable] = useState(false);
   // competition info
   const [competition, setCompetition] = useState({});
@@ -25,7 +26,7 @@ const Competition = ({
     // Getting competition info
     axios
       .get(`http://api.football-data.org/v2/competitions/${id}`, {
-        headers: { 'X-Auth-Token': '5b42f8f8f9f247439bda03879156cdcb' }
+        headers: { 'X-Auth-Token': token }
       })
       .then(res => {
         setLoading(false);
@@ -48,7 +49,7 @@ const Competition = ({
             // Getting Teams
             axios
               .get(`http://api.football-data.org/v2/competitions/${id}/teams`, {
-                headers: { 'X-Auth-Token': '5b42f8f8f9f247439bda03879156cdcb' }
+                headers: { 'X-Auth-Token': token }
               })
               .then(res => {
                 setTeams(res.data.teams);

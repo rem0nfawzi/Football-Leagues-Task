@@ -1,6 +1,7 @@
 import React from 'react';
 import Leagues from './Leagues';
 import '../../assets/css/leagues.css';
+
 const Home = () => {
   return (
     <section id='leagues'>

@@ -1,11 +1,11 @@
 import axios from 'axios';
-
+import token from '../constants';
 // Getting all leagues
 export const getLeagues = () => async dispatch => {
   try {
     const res = await axios.get(
       'http://api.football-data.org/v2/competitions',
-      { headers: { 'X-Auth-Token': '5b42f8f8f9f247439bda03879156cdcb' } }
+      { headers: { 'X-Auth-Token': token } }
     );
     dispatch({
       type: 'GET_LEAGUES_SUCCESS',
@@ -23,7 +23,7 @@ export const getLeagues = () => async dispatch => {
 export const getTeams = LeagueId => async dispatch => {
   const res = await axios.get(
     `http://api.football-data.org/v2/competitions/${LeagueId}/teams`,
-    { headers: { 'X-Auth-Token': '5b42f8f8f9f247439bda03879156cdcb' } }
+    { headers: { 'X-Auth-Token': token } }
   );
   if (res) {
     dispatch({

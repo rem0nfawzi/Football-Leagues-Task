@@ -5,6 +5,7 @@ import League from './League';
 import '../../assets/css/leagues.css';
 import Loader from '../common/Loader';
 import ErrMsg from '../common/ErrMsg';
+
 const Leagues = ({ leagues: { leagues, loading, err }, getLeagues }) => {
   // Getting all leagues
   useEffect(() => {
@@ -14,9 +15,11 @@ const Leagues = ({ leagues: { leagues, loading, err }, getLeagues }) => {
   // Show spinner untill data is loaded
   if (loading) return <Loader />;
 
-  // show actual content when data is ready
+  // Display error message if something went wrong
   if (err !== null)
     return <ErrMsg msg="Can't display data now, Please try again later." />;
+
+  // show actual content when data is ready
   return (
     <Fragment>
       {leagues.map(league => (
@@ -40,6 +43,7 @@ const mapStateToProps = state => {
   };
 };
 
+// Connecting to redux store
 export default connect(
   mapStateToProps,
   { getLeagues }
