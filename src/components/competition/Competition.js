@@ -3,6 +3,8 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import Teams from './Teams';
 import '../../assets/css/competition.css';
+import Loader from '../common/Loader';
+import ErrMsg from '../common/ErrMsg';
 
 const Competition = ({
   match: {
@@ -58,23 +60,33 @@ const Competition = ({
         setLoading(false);
       });
   }, [id, available, leagues, loading]);
+
+  // While loading
+  if (loading) return <Loader />;
+
   return (
     <Fragment>
       <section className='league-info'>
         <div className='container'>
           <h2>football leagues</h2>
           <p>{competition.name && competition.name}</p>
-          <p>{!loading && !available && "League isn't available"}</p>
+          <p>
+            {!loading && !available && (
+              <ErrMsg msg="Can't show information about this league now, Please try again later" />
+            )}
+          </p>
 
-          <div className='info-box'>
-            <h3>{competition.name && competition.name}</h3>
-            <div className='details'>
-              <p>
-                seasons: {competition.seasons && competition.seasons.length}
-              </p>
-              <p>area: {competition.area && competition.area.name}</p>
+          {!loading && available && (
+            <div className='info-box'>
+              <h3>{competition.name && competition.name}</h3>
+              <div className='details'>
+                <p>
+                  seasons: {competition.seasons && competition.seasons.length}
+                </p>
+                <p>area: {competition.area && competition.area.name}</p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
       {teams.length > 0 ? <Teams teams={teams} /> : null}

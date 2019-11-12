@@ -21,10 +21,41 @@
             margin-right: 30px;
         }
 
+        .statistics {
+            display: flex;
+            flex-wrap: wrap;
+
+            >div {
+                display: flex;
+                margin-right: 50px;
+                align-items: center;
+
+                margin-top: 5px;
+
+                img {
+                    width: 25px;
+                    margin-right: 10px;
+                }
+            }
+        }
+
         h3 {
             margin-top: 0;
             margin-bottom: 20px;
         }
     }
 
+}
+
+// responsiveness
+@media (max-width: 500px) {
+    .league {
+        flex-direction: column;
+        align-items: inherit;
+
+        .link {
+            margin-top: 30px;
+            width: max-content;
+        }
+    }
 }

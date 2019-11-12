@@ -4,6 +4,7 @@ import { getLeagues } from '../../store/actions/leagues';
 import League from './League';
 import '../../assets/css/leagues.css';
 import Loader from '../common/Loader';
+import ErrMsg from '../common/ErrMsg';
 const Leagues = ({ leagues: { leagues, loading, err }, getLeagues }) => {
   // Getting all leagues
   useEffect(() => {
@@ -14,7 +15,8 @@ const Leagues = ({ leagues: { leagues, loading, err }, getLeagues }) => {
   if (loading) return <Loader />;
 
   // show actual content when data is ready
-  if (err !== null) return <p>{err}</p>;
+  if (err !== null)
+    return <ErrMsg msg="Can't display data now, Please try again later." />;
   return (
     <Fragment>
       {leagues.map(league => (

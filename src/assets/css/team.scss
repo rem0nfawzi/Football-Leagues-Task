@@ -135,3 +135,66 @@ $purple: #583bb6;
         }
     }
 }
+
+// responsiveness
+@media (max-width: 900px) {
+    .team-info .contact .wrapper {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 550px) {
+    .team-info .contact .wrapper {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 950px) {
+    .players .players-wrap .player-wrap {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 710px) {
+    .players {
+        padding: 10px;
+    }
+
+    .players .players-wrap .player-wrap {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 1160px) {
+    .matches-box .matches-wrap .match-wrap {
+        flex-basis: 100%;
+    }
+
+    .matches-box {
+        padding: 10px;
+    }
+
+}
+
+@media (max-width: 420px) {
+    .matches-box .matches-wrap .match-wrap .match>div h4 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .matches-box .matches-wrap .match-wrap .match {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .matches-box .matches-wrap .match-wrap .match>div .date {
+        font-size: 10px;
+        margin-top: 0;
+    }
+
+    .matches-box .matches-wrap .match-wrap .match>div:nth-of-type(2) {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}

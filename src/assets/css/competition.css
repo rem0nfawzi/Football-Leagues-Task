@@ -35,3 +35,12 @@
       /* line 43, competition.scss */
       .teams-wrap .team .team-content img {
         width: 50px; }
+
+@media (max-width: 1100px) {
+  /* line 53, competition.scss */
+  .teams-wrap .team {
+    flex-basis: 50%; } }
+@media (max-width: 790px) {
+  /* line 59, competition.scss */
+  .teams-wrap .team {
+    flex-basis: 100%; } }

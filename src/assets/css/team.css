@@ -1,94 +1,94 @@
-/* line 4, team.scss */
+/* line 4, Team.scss */
 .team-info {
   background-color: #f7f7f7;
   padding: 25px; }
-  /* line 8, team.scss */
+  /* line 8, Team.scss */
   .team-info .title {
     display: flex;
     align-items: center;
     margin-bottom: 20px; }
-    /* line 13, team.scss */
+    /* line 13, Team.scss */
     .team-info .title .logo {
       width: 50px;
       margin-right: 20px; }
-    /* line 18, team.scss */
+    /* line 18, Team.scss */
     .team-info .title h3 {
       margin-bottom: 0; }
-  /* line 23, team.scss */
+  /* line 23, Team.scss */
   .team-info .contact {
     display: flex;
     flex-wrap: wrap; }
-    /* line 27, team.scss */
+    /* line 27, Team.scss */
     .team-info .contact .wrapper {
       flex-basis: 33.333%;
       display: flex;
       align-items: center;
       padding: 15px; }
-      /* line 33, team.scss */
+      /* line 33, Team.scss */
       .team-info .contact .wrapper.long {
         flex-grow: 1; }
-      /* line 37, team.scss */
+      /* line 37, Team.scss */
       .team-info .contact .wrapper img {
         width: 30px;
         margin-right: 10px; }
-      /* line 42, team.scss */
+      /* line 42, Team.scss */
       .team-info .contact .wrapper p {
         font-size: 12px; }
 
-/* line 49, team.scss */
+/* line 49, Team.scss */
 .players {
   background-color: #583bb6;
   padding: 50px;
   margin-top: 30px;
   border-radius: 5px; }
-  /* line 55, team.scss */
+  /* line 55, Team.scss */
   .players h3 {
     color: #fff;
     padding: 10px; }
-  /* line 60, team.scss */
+  /* line 60, Team.scss */
   .players .players-wrap {
     display: flex;
     flex-wrap: wrap; }
-    /* line 64, team.scss */
+    /* line 64, Team.scss */
     .players .players-wrap .player-wrap {
       flex-basis: 33.333%;
       padding: 10px; }
-    /* line 69, team.scss */
+    /* line 69, Team.scss */
     .players .players-wrap .player {
       padding: 20px;
       background-color: #4528a4; }
-      /* line 73, team.scss */
+      /* line 73, Team.scss */
       .players .players-wrap .player h4 {
         margin-bottom: 5px;
         color: #eee; }
-      /* line 78, team.scss */
+      /* line 78, Team.scss */
       .players .players-wrap .player .details {
         display: flex;
         justify-content: space-between; }
-        /* line 82, team.scss */
+        /* line 82, Team.scss */
         .players .players-wrap .player .details p {
           color: #ccc;
           font-size: 13px; }
 
-/* line 91, team.scss */
+/* line 91, Team.scss */
 .matches-box {
   background-color: #583bb6;
   padding: 50px;
   margin-top: 30px;
   border-radius: 5px; }
-  /* line 97, team.scss */
+  /* line 97, Team.scss */
   .matches-box > h3 {
     color: #fff;
     padding: 10px; }
-  /* line 102, team.scss */
+  /* line 102, Team.scss */
   .matches-box .matches-wrap {
     display: flex;
     flex-wrap: wrap; }
-    /* line 107, team.scss */
+    /* line 107, Team.scss */
     .matches-box .matches-wrap .match-wrap {
       flex-basis: 50%;
       padding: 10px; }
-      /* line 111, team.scss */
+      /* line 111, Team.scss */
       .matches-box .matches-wrap .match-wrap .match {
         display: flex;
         justify-content: center;
@@ -96,16 +96,64 @@
         padding: 20px;
         background-color: #4528a4;
         height: 100%; }
-        /* line 119, team.scss */
+        /* line 119, Team.scss */
         .matches-box .matches-wrap .match-wrap .match > div {
           flex-basis: 33.333%;
           text-align: center; }
-          /* line 123, team.scss */
+          /* line 123, Team.scss */
           .matches-box .matches-wrap .match-wrap .match > div h4 {
             color: #ccc;
             margin-bottom: 0; }
-          /* line 128, team.scss */
+          /* line 128, Team.scss */
           .matches-box .matches-wrap .match-wrap .match > div .date {
             margin-top: 5px;
             color: #eee;
             font-size: 12px; }
+
+@media (max-width: 900px) {
+  /* line 141, Team.scss */
+  .team-info .contact .wrapper {
+    flex-basis: 50%; } }
+@media (max-width: 550px) {
+  /* line 147, Team.scss */
+  .team-info .contact .wrapper {
+    flex-basis: 100%; } }
+@media (max-width: 950px) {
+  /* line 153, Team.scss */
+  .players .players-wrap .player-wrap {
+    flex-basis: 50%; } }
+@media (max-width: 710px) {
+  /* line 159, Team.scss */
+  .players {
+    padding: 10px; }
+
+  /* line 163, Team.scss */
+  .players .players-wrap .player-wrap {
+    flex-basis: 100%; } }
+@media (max-width: 1160px) {
+  /* line 169, Team.scss */
+  .matches-box .matches-wrap .match-wrap {
+    flex-basis: 100%; }
+
+  /* line 173, Team.scss */
+  .matches-box {
+    padding: 10px; } }
+@media (max-width: 420px) {
+  /* line 180, Team.scss */
+  .matches-box .matches-wrap .match-wrap .match > div h4 {
+    font-size: 14px; } }
+@media (max-width: 400px) {
+  /* line 186, Team.scss */
+  .matches-box .matches-wrap .match-wrap .match {
+    flex-direction: column;
+    align-items: center; }
+
+  /* line 191, Team.scss */
+  .matches-box .matches-wrap .match-wrap .match > div .date {
+    font-size: 10px;
+    margin-top: 0; }
+
+  /* line 196, Team.scss */
+  .matches-box .matches-wrap .match-wrap .match > div:nth-of-type(2) {
+    margin-top: 10px;
+    margin-bottom: 10px; } }

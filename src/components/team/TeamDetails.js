@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import axios from 'axios';
 import flag from '../../assets/images/flag.svg';
 import address from '../../assets/images/address.svg';
@@ -9,6 +9,8 @@ import defaultLogo from '../../assets/images/championship.svg';
 import '../../assets/css/team.css';
 import Squad from './Squad';
 import Matches from './Matches';
+import Loader from '../common/Loader';
+import ErrMsg from '../common/ErrMsg';
 
 const TeamDetails = ({
   match: {
@@ -16,61 +18,85 @@ const TeamDetails = ({
   }
 }) => {
   const [team, setTeam] = useState({});
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
+    // Get team details and assign them to state
     axios
       .get(`https://api.football-data.org/v2/teams/${id}`, {
         headers: { 'X-Auth-Token': '5b42f8f8f9f247439bda03879156cdcb' }
       })
       .then(res => {
         setTeam(res.data);
-      });
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, [id]);
+
+  // While loading
+  if (loading) return <Loader />;
+
   return (
     <section>
       <div className='container'>
-        <div className='team-info'>
-          <div className='title'>
-            <img
-              className='logo'
-              src={team.crestUrl ? team.crestUrl : defaultLogo}
-              alt='logo'
-            />
-            <h3>{team.name && team.name}</h3>
-          </div>
-          <div className='contact'>
-            {/* Country */}
-            <div className='wrapper'>
-              <img src={flag} alt='country' />
-              <p>{team.area && team.area.name}</p>
-            </div>
+        {!loading && !team.name ? (
+          <ErrMsg msg="Can't show team data, Please try again." />
+        ) : (
+          <Fragment>
+            <div className='team-info'>
+              <div className='title'>
+                <img
+                  className='logo'
+                  src={team.crestUrl ? team.crestUrl : defaultLogo}
+                  alt='logo'
+                />
+                <h3>{team.name && team.name}</h3>
+              </div>
+              <div className='contact'>
+                {/* Country */}
+                {team.area && (
+                  <div className='wrapper'>
+                    <img src={flag} alt='country' />
+                    <p>{team.area.name}</p>
+                  </div>
+                )}
 
-            {/* Website */}
-            <div className='wrapper'>
-              <img src={website} alt='country' />
-              <p>{team.website && team.website}</p>
-            </div>
+                {/* Website */}
+                {team.website && (
+                  <div className='wrapper'>
+                    <img src={website} alt='country' />
+                    <p>{team.website}</p>
+                  </div>
+                )}
 
-            {/* Phone */}
-            <div className='wrapper'>
-              <img src={phone} alt='phone' />
-              <p>{team.phone && team.phone}</p>
-            </div>
+                {/* Phone */}
+                {team.phone && (
+                  <div className='wrapper'>
+                    <img src={phone} alt='phone' />
+                    <p>{team.phone}</p>
+                  </div>
+                )}
 
-            {/* Email */}
-            <div className='wrapper'>
-              <img src={email} alt='email' />
-              <p>{team.email && team.email}</p>
-            </div>
+                {/* Email */}
+                {team.email && (
+                  <div className='wrapper'>
+                    <img src={email} alt='email' />
+                    <p>{team.email}</p>
+                  </div>
+                )}
 
-            {/* Address */}
-            <div className='wrapper long'>
-              <img src={address} alt='address' />
-              <p>{team.address && team.address}</p>
+                {/* Address */}
+                {team.address && (
+                  <div className='wrapper long'>
+                    <img src={address} alt='address' />
+                    <p>{team.address}</p>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        </div>
-        <Squad squad={team.squad ? team.squad : null} />
-        <Matches teamId={team.id} />
+            <Squad squad={team.squad ? team.squad : null} />
+            <Matches teamId={team.id} />
+          </Fragment>
+        )}
       </div>
     </section>
   );

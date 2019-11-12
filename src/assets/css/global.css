@@ -147,3 +147,22 @@ section {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+/* line 169, global.scss */
+#err-msg {
+  padding: 20px 40px;
+  background-color: #583bb6;
+  border-radius: 5px;
+  margin-top: 20px; }
+  /* line 175, global.scss */
+  #err-msg p {
+    color: #fff; }
+
+@media (max-width: 690px) {
+  /* line 182, global.scss */
+  .container {
+    padding-left: 20px;
+    padding-right: 20px; } }
+@media (max-width: 550px) {
+  /* line 190, global.scss */
+  .logo-wrap a h1 {
+    font-size: 25px; } }

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Match from './Match';
+import Loader from '../common/Loader';
 
 const Matches = ({ teamId }) => {
   const [matches, setMatches] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
       .get(`http://api.football-data.org/v2/teams/${teamId}/matches`, {
@@ -11,8 +13,13 @@ const Matches = ({ teamId }) => {
       })
       .then(res => {
         setMatches(res.data.matches);
+        setLoading(false);
+      })
+      .catch(() => {
+        setLoading(false);
       });
   }, [teamId]);
+  if (loading) return <Loader />;
   return (
     <div className='matches-box'>
       <h3>Matches</h3>
