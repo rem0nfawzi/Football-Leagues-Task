@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getLeagues } from '../../store/actions/leagues';
 import League from './League';
 import '../../assets/css/leagues.css';
+import Loader from '../common/Loader';
 const Leagues = ({ leagues: { leagues, loading, err }, getLeagues }) => {
   // Getting all leagues
   useEffect(() => {
@@ -10,7 +11,7 @@ const Leagues = ({ leagues: { leagues, loading, err }, getLeagues }) => {
   }, [getLeagues]);
 
   // Show spinner untill data is loaded
-  if (loading) return <div>loading ...</div>;
+  if (loading) return <Loader />;
 
   // show actual content when data is ready
   if (err !== null) return <p>{err}</p>;
