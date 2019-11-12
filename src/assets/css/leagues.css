@@ -1,0 +1,10 @@
+/* line 1, leagues.scss */
+.league {
+  padding: 40px;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  margin-bottom: 25px; }
+  /* line 7, leagues.scss */
+  .league h3 {
+    margin-top: 0;
+    margin-bottom: 20px; }

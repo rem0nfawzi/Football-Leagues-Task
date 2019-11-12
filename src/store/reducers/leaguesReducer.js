@@ -19,6 +19,17 @@ export default (state = initState, action) => {
         loading: false,
         err: payload.err
       };
+    case 'GET_LEAGUE_TEAMS_SUCCESS':
+      let leagues = state.leagues.map(league => {
+        if (league.id === payload.competition.id) {
+          return { ...league, count: payload.count, teams: payload.teams };
+        }
+        return league;
+      });
+      return {
+        ...state,
+        leagues: leagues
+      };
     default:
       return state;
   }
