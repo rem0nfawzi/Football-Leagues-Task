@@ -1,17 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import defaultLogo from '../../assets/images/championship.svg';
+import React from "react";
+import { Link } from "react-router-dom";
+import defaultLogo from "../../assets/images/championship.svg";
 const Team = ({ team }) => {
   return (
-    <Link className='team' to={`/team/${team.id}`}>
-      <div className='team-content'>
+    <div className="team">
+      <Link className="team-content" to={`/team/${team.id}`}>
         <img
           src={team.crestUrl ? team.crestUrl : defaultLogo}
           alt={team.name}
         />
         <h4>{team.name}</h4>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 
