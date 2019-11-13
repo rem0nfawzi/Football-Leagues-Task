@@ -6,7 +6,7 @@ import "../../assets/css/competition.css";
 import Loader from "../common/Loader";
 import ErrMsg from "../common/ErrMsg";
 import { token } from "../../store/constants";
-
+import { Link } from "react-router-dom";
 const Competition = ({
   match: {
     params: { id }
@@ -73,11 +73,19 @@ const Competition = ({
       <section className="league-info">
         <div className="container">
           <h2>football leagues</h2>
-          <p>{competition.name && competition.name}</p>
+
+          <div className="breadcrumb">
+            <Link to="/">Leagues</Link> /{" "}
+            <span>
+              {competition.name
+                ? competition.name
+                : "League name isn't available"}
+            </span>
+          </div>
+
           {!loading && !available && (
             <ErrMsg msg="Can't show information about this league now, Please try again later" />
           )}
-
           {!loading && available && (
             <div className="info-box">
               <h3>{competition.name && competition.name}</h3>
@@ -91,7 +99,7 @@ const Competition = ({
           )}
         </div>
       </section>
-      {teams.length > 0 ? <Teams teams={teams} /> : null}
+      {teams.length > 0 ? <Teams teams={teams} leagueId={id} /> : null}
     </Fragment>
   );
 };

@@ -1,30 +1,31 @@
-import React, { useEffect, useState, Fragment } from 'react';
-import axios from 'axios';
-import flag from '../../assets/images/flag.svg';
-import address from '../../assets/images/address.svg';
-import phone from '../../assets/images/phone.svg';
-import website from '../../assets/images/website.svg';
-import email from '../../assets/images/email.svg';
-import defaultLogo from '../../assets/images/championship.svg';
-import '../../assets/css/team.css';
-import Squad from './Squad';
-import Matches from './Matches';
-import Loader from '../common/Loader';
-import ErrMsg from '../common/ErrMsg';
-import { token } from '../../store/constants';
-
+import React, { useEffect, useState, Fragment } from "react";
+import axios from "axios";
+import flag from "../../assets/images/flag.svg";
+import address from "../../assets/images/address.svg";
+import phone from "../../assets/images/phone.svg";
+import website from "../../assets/images/website.svg";
+import email from "../../assets/images/email.svg";
+import defaultLogo from "../../assets/images/championship.svg";
+import "../../assets/css/team.css";
+import Squad from "./Squad";
+import Matches from "./Matches";
+import Loader from "../common/Loader";
+import ErrMsg from "../common/ErrMsg";
+import { token } from "../../store/constants";
+import { Link } from "react-router-dom";
 const TeamDetails = ({
   match: {
-    params: { id }
+    params: { leagueId, id }
   }
 }) => {
   const [team, setTeam] = useState({});
   const [loading, setLoading] = useState(true);
+  const [leagueName, setLeagueName] = useState("Loading ...");
   useEffect(() => {
     // Get team details and assign them to state
     axios
       .get(`https://api.football-data.org/v2/teams/${id}`, {
-        headers: { 'X-Auth-Token': token }
+        headers: { "X-Auth-Token": token }
       })
       .then(res => {
         setTeam(res.data);
@@ -33,62 +34,80 @@ const TeamDetails = ({
       .catch(() => setLoading(false));
   }, [id]);
 
+  // Getting league name
+  useEffect(() => {
+    axios
+      .get(`https://api.football-data.org/v2/competitions/${leagueId}`, {
+        headers: { "X-Auth-Token": token }
+      })
+      .then(res => {
+        setLeagueName(res.data.name);
+      })
+      .catch(() => setLeagueName("League name is not available"));
+  }, [leagueId]);
+
   // While loading
   if (loading) return <Loader />;
 
   return (
     <section>
-      <div className='container'>
+      <div className="container">
+        <h2>football leagues</h2>
+        <div className="breadcrumb">
+          <Link to="/">Leagues</Link> /{" "}
+          <Link to={`/league/${leagueId}`}> {leagueName} </Link> /{" "}
+          <span>{team.name && team.name} </span>
+        </div>
         {!loading && !team.name ? (
           <ErrMsg msg="Can't show team data, Please try again." />
         ) : (
           <Fragment>
-            <div className='team-info'>
-              <div className='title'>
+            <div className="team-info">
+              <div className="title">
                 <img
-                  className='logo'
+                  className="logo"
                   src={team.crestUrl ? team.crestUrl : defaultLogo}
-                  alt='logo'
+                  alt="logo"
                 />
                 <h3>{team.name && team.name}</h3>
               </div>
-              <div className='contact'>
+              <div className="contact">
                 {/* Country */}
                 {team.area && (
-                  <div className='wrapper'>
-                    <img src={flag} alt='country' />
+                  <div className="wrapper">
+                    <img src={flag} alt="country" />
                     <p>{team.area.name}</p>
                   </div>
                 )}
 
                 {/* Website */}
                 {team.website && (
-                  <div className='wrapper'>
-                    <img src={website} alt='country' />
+                  <div className="wrapper">
+                    <img src={website} alt="country" />
                     <p>{team.website}</p>
                   </div>
                 )}
 
                 {/* Phone */}
                 {team.phone && (
-                  <div className='wrapper'>
-                    <img src={phone} alt='phone' />
+                  <div className="wrapper">
+                    <img src={phone} alt="phone" />
                     <p>{team.phone}</p>
                   </div>
                 )}
 
                 {/* Email */}
                 {team.email && (
-                  <div className='wrapper'>
-                    <img src={email} alt='email' />
+                  <div className="wrapper">
+                    <img src={email} alt="email" />
                     <p>{team.email}</p>
                   </div>
                 )}
 
                 {/* Address */}
                 {team.address && (
-                  <div className='wrapper long'>
-                    <img src={address} alt='address' />
+                  <div className="wrapper long">
+                    <img src={address} alt="address" />
                     <p>{team.address}</p>
                   </div>
                 )}

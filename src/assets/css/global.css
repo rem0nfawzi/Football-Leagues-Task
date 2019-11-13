@@ -12,6 +12,7 @@ body {
 /* line 19, global.scss */
 p,
 a,
+span,
 li,
 h1,
 h2,
@@ -21,7 +22,7 @@ h5,
 h6 {
   font-family: opensans; }
 
-/* line 31, global.scss */
+/* line 32, global.scss */
 h1,
 h2,
 h3,
@@ -33,32 +34,32 @@ h6 {
   text-transform: capitalize;
   word-spacing: 2px; }
 
-/* line 43, global.scss */
+/* line 44, global.scss */
 a {
   text-decoration: none; }
 
-/* line 47, global.scss */
+/* line 48, global.scss */
 ul {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none; }
 
-/* line 54, global.scss */
+/* line 55, global.scss */
 p {
   margin-top: 0;
   margin-bottom: 0; }
 
-/* line 59, global.scss */
+/* line 60, global.scss */
 .main-title {
   margin-bottom: 50px; }
 
-/* line 63, global.scss */
+/* line 64, global.scss */
 section {
   padding-top: 80px;
   padding-bottom: 80px; }
 
-/* line 68, global.scss */
+/* line 69, global.scss */
 .link {
   padding: 10px 30px;
   background-color: #583bb6;
@@ -70,42 +71,54 @@ section {
   font-weight: bold; }
 
 /* line 80, global.scss */
+.breadcrumb {
+  margin-top: 10px;
+  margin-bottom: 20px; }
+  /* line 84, global.scss */
+  .breadcrumb a {
+    color: #ccc;
+    padding: 5px; }
+  /* line 89, global.scss */
+  .breadcrumb span {
+    padding: 5px; }
+
+/* line 95, global.scss */
 .main-layout {
   min-height: 100vh;
   position: relative;
   padding-bottom: 100px; }
 
-/* line 86, global.scss */
+/* line 101, global.scss */
 .container {
   padding-left: 100px;
   padding-right: 100px; }
 
-/* line 91, global.scss */
+/* line 106, global.scss */
 .logo-wrap {
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: #583bb6; }
-  /* line 96, global.scss */
+  /* line 111, global.scss */
   .logo-wrap a h1 {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 0; }
 
-/* line 104, global.scss */
+/* line 119, global.scss */
 #nav {
   background-color: #eee; }
-  /* line 107, global.scss */
+  /* line 122, global.scss */
   #nav ul {
     display: flex; }
-    /* line 110, global.scss */
+    /* line 125, global.scss */
     #nav ul li {
       padding: 10px 20px; }
-      /* line 113, global.scss */
+      /* line 128, global.scss */
       #nav ul li:first-of-type {
         padding-left: 0; }
 
-/* line 120, global.scss */
+/* line 135, global.scss */
 #footer {
   position: absolute;
   bottom: 0;
@@ -114,7 +127,7 @@ section {
   background-color: #1f1f1f;
   padding-top: 30px;
   padding-bottom: 30px; }
-  /* line 129, global.scss */
+  /* line 144, global.scss */
   #footer p {
     color: #fff;
     text-align: center;
@@ -123,11 +136,11 @@ section {
     word-spacing: 3px;
     letter-spacing: 1px; }
 
-/* line 139, global.scss */
+/* line 154, global.scss */
 #loader-wrap {
   min-height: 200px;
   position: relative; }
-  /* line 143, global.scss */
+  /* line 158, global.scss */
   #loader-wrap .loader {
     position: absolute;
     left: 0;
@@ -147,22 +160,22 @@ section {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
-/* line 169, global.scss */
+/* line 184, global.scss */
 #err-msg {
   padding: 20px 40px;
   background-color: #583bb6;
   border-radius: 5px;
   margin-top: 20px; }
-  /* line 175, global.scss */
+  /* line 190, global.scss */
   #err-msg p {
     color: #fff; }
 
 @media (max-width: 690px) {
-  /* line 182, global.scss */
+  /* line 197, global.scss */
   .container {
     padding-left: 20px;
     padding-right: 20px; } }
 @media (max-width: 550px) {
-  /* line 190, global.scss */
+  /* line 205, global.scss */
   .logo-wrap a h1 {
     font-size: 25px; } }

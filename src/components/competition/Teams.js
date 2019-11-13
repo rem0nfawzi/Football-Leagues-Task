@@ -1,12 +1,12 @@
-import React from 'react';
-import Team from './Team';
-const Teams = ({ teams }) => {
+import React from "react";
+import Team from "./Team";
+const Teams = ({ teams, leagueId }) => {
   return (
     <section>
-      <div className='container'>
-        <div className='teams-wrap'>
+      <div className="container">
+        <div className="teams-wrap">
           {teams.map(team => (
-            <Team team={team} key={team.id} />
+            <Team team={team} leagueId={leagueId} key={team.id} />
           ))}
         </div>
       </div>

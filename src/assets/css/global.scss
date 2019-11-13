@@ -18,6 +18,7 @@ body {
 
 p,
 a,
+span,
 li,
 h1,
 h2,
@@ -74,6 +75,20 @@ section {
     font-size: 13px;
     letter-spacing: 2px;
     font-weight: bold;
+}
+
+.breadcrumb {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    a {
+        color: #ccc;
+        padding: 5px;
+    }
+
+    span {
+        padding: 5px;
+    }
 }
 
 // Main Layout Styling
